@@ -1,0 +1,1 @@
+<?php $Index=$Users=$Faculty_info=$Questionnaires=$Sched=$Result=$Reports=$admin_setting="";?>
