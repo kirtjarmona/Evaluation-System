@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <?php session_start(); ?>
+<?php if (!isset($_SESSION['admin'])) { header('location: login.php'); } ?>
 <?php require_once("../Connection/connection.php"); ?>
 
 <?php
