@@ -2,14 +2,16 @@
 <?php session_start(); ?>
 <?php if (!isset($_SESSION['admin'])) { header('location: login.php'); } ?>
 <?php require_once("../Connection/connection.php"); ?>
+
 <?php
-			$query_chairperson_name = "	SELECT id, position, name
+		$query_chairperson_name = "	SELECT id, position, name
 								FROM fes.signatory ORDER BY id DESC";
 			$result_signatories = pg_query($conn, $query_chairperson_name) or die(pg_last_error($conn));
 			$count_chairperson_name = pg_num_rows($result_signatories);
 			$row_default = pg_fetch_all($result_signatories);
 			#$row_name = pg_fetch_assoc($result_signatories);
 			
+
 		
 		$query_superior = "SELECT deptchairman FROM srgb.department
 									WHERE deptchairman = '".$_GET['id']."'";
@@ -21,8 +23,12 @@
 		$_SESSION['super_t'] = $_SESSION['result_form1_super']+$_SESSION['result_form2_super']+$_SESSION['result_form3_super']+$_SESSION['result_form4_super'];
 		$_SESSION['super_w'] = $_SESSION['super_t']*.30;
 	}
+
+
+
+
 ?>
-<?php
+<?php 
 	$query_ratings_result = "SELECT COUNT(faculty_id) AS FF, SUM(total_form1), SUM(total_form2),SUM(total_form3),SUM(total_form4),evaluator_type
 							FROM fes.ratings
 							WHERE sem = '".$_SESSION['sem']."'
@@ -32,7 +38,9 @@
 							ORDER BY FF DESC";
 	$result_ratings_result = pg_query($conn, $query_ratings_result) or die(pg_last_error($conn));
 	$count_ratings_result = pg_num_rows($result_ratings_result);
-while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
+
+
+	while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 <?php
 								if (trim($row_ratings_result[5])=="Student") {
 									$_SESSION['result_form1_student'] = $row_ratings_result[1]/$row_ratings_result[0];
@@ -47,6 +55,8 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 									$_SESSION['result_form2_super'] = $row_ratings_result[2]/$row_ratings_result[0];
 									$_SESSION['result_form3_super'] = $row_ratings_result[3]/$row_ratings_result[0];
 									$_SESSION['result_form4_super'] = $row_ratings_result[4]/$row_ratings_result[0];
+
+
 									$_SESSION['super_t'] = $_SESSION['result_form1_super']+$_SESSION['result_form2_super']+$_SESSION['result_form3_super']+$_SESSION['result_form4_super'];
 									$_SESSION['super_w'] = $_SESSION['super_t']*.30;
 								}
@@ -66,9 +76,11 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 									$_SESSION['self_t'] = $_SESSION['result_form1_self']+$_SESSION['result_form2_self']+$_SESSION['result_form3_self']+$_SESSION['result_form4_self'];
 									$_SESSION['self_w'] = $_SESSION['self_t']*.20;
 								}
+
 								$_SESSION['total_evaluated']=$_SESSION['self_w']+$_SESSION['peer_w']+$_SESSION['super_w']+$_SESSION['student_w']
-?>
+							?>
 <?php } ?>
+
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -110,15 +122,15 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 					<td>College: <b>CAS</b></td>
 				</tr>
 				<tr>
-					<?php if ($_SESSION['sem']=='2') {
-						$text = "nd";
-					} elseif ($_SESSION['sem']=='1') {
-						$text = "st";
-					} elseif ($_SESSION['sem']=='S') {
-						$text = "Summer";
-					} elseif (isset($_SESSION['sem'])) {
-						$text = " ";
-					} ?>
+				<?php if ($_SESSION['sem']=='2') {
+					$text = "nd";
+				} elseif ($_SESSION['sem']=='1') {
+					$text = "st";
+				} elseif ($_SESSION['sem']=='S') {
+					$text = "Summer";
+				} elseif (isset($_SESSION['sem'])) {
+					$text = " ";
+				} ?>
 					<td>Rating Period: <b><?php echo $_SESSION['sem'].$text; ?> Sem, <?php echo $_SESSION['sy'] ?></b></td>
 					<td>Department: <b><?php echo $_GET['department']; ?></b></td>
 					
@@ -294,17 +306,17 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 				<td>Final Numeric Rating: <b><?php echo $_SESSION['total_evaluated']; ?></b></td>
 			</tr>
 			<tr>
-				<?php if ($_SESSION['total_evaluated']>=95) {
-					$message="Outstanding";
-				}elseif ($_SESSION['total_evaluated']>=90) {
-					$message="Excellent";
-				}elseif ($_SESSION['total_evaluated']>=80) {
-					$message="Very Good";
-				}elseif ($_SESSION['total_evaluated']>=70) {
-					$message="Good";
-				}elseif ($_SESSION['total_evaluated']>=60) {
-					$message="Fair";
-				} ?>
+			<?php if ($_SESSION['total_evaluated']>=95) {
+				$message="Outstanding";
+			}elseif ($_SESSION['total_evaluated']>=90) {
+				$message="Excellent";
+			}elseif ($_SESSION['total_evaluated']>=80) {
+				$message="Very Good";
+			}elseif ($_SESSION['total_evaluated']>=70) {
+				$message="Good";
+			}elseif ($_SESSION['total_evaluated']>=60) {
+				$message="Fair";
+			} ?>
 				<td>Descriptive Rating: <b><?php echo($message); ?></b></td>
 			</tr>
 			<tr><td></td></tr>
@@ -343,7 +355,7 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 				<td><b>Dean of the College</b></td>
 				<td><b>VP for Academic Affairs</b></td>
 			</tr>
-			<!-- --------------------------- -->
+<!-- --------------------------- -->
 			<tr><td></td></tr>
 			<tr><td></td></tr>
 			<tr><td></td></tr>
@@ -361,35 +373,43 @@ while ($row_ratings_result = pg_fetch_array($result_ratings_result)) { ?>
 			</tr>
 			
 		</table>
+
+
 		
 		
 	</body>
 </html>
-<?php
+
+<?php 
 unset($_SESSION['result_form1_student']);
 unset($_SESSION['result_form2_student']);
 unset($_SESSION['result_form3_student']);
 unset($_SESSION['result_form4_student']);
 unset($_SESSION['student_t']);
 unset($_SESSION['student_w']);
+
 unset($_SESSION['result_form1_peer']);
 unset($_SESSION['result_form2_peer']);
 unset($_SESSION['result_form3_peer']);
 unset($_SESSION['result_form4_peer']);
 unset($_SESSION['peer_t']);
 unset($_SESSION['peer_w']);
+
 unset($_SESSION['result_form1_super']);
 unset($_SESSION['result_form2_super']);
 unset($_SESSION['result_form3_super']);
 unset($_SESSION['result_form4_super']);
 unset($_SESSION['super_t']);
 unset($_SESSION['super_w']);
+
 unset($_SESSION['result_form1_self']);
 unset($_SESSION['result_form2_self']);
 unset($_SESSION['result_form3_self']);
 unset($_SESSION['result_form4_self']);
 unset($_SESSION['self_t']);
 unset($_SESSION['self_w']);
+
+
 unset($_SESSION['total_evaluated']);
-?>
+ ?>
 <?php require_once("footer.php"); ?>

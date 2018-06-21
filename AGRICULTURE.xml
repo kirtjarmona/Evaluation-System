@@ -1,0 +1,220 @@
+AGRICULTURE
+IABARS
+	2000-007
+CHAIRMAN
+	2000-002 ----- EXISTED
+SUB
+
+INSERT INTO srgb.faculty (empid, deptcode)
+VALUES
+('2000-003','AGRI'),
+('2000-004','AGRI'),
+('2017-5488','AGRI'),
+('2000-016','AGRI'),
+('AB11','AGRI'),
+('2000-009','AGRI'),
+('2000-007','AGRI'),
+('2000-001','AGRI'),
+('2000-010','AGRI')
+
+('2000-002','Agudera'),
+('2000-003','Barola'),
+('2000-004','Batoctoy'),
+('2017-5488','Caballero'),
+('2000-016','Cabalquinto'),
+('AB11','Caintic'),
+('2000-009','Campaner'),
+('2000-007','Estimada'),
+('2000-001','Ponteras'),
+('2000-006','Revilla'),
+('2000-010','Tanduyan')
+
+INSERT INTO fes.faculty (empid, deptcode)
+VALUES
+('DAS-LANTICSE',''),
+('2017-1299',''),
+('2016-7014',''),
+('2017-3223','')
+
+INSERT INTO fes.faculty (empid, deptcode)
+VALUES
+('2000-016','AGRI'),
+('AGRI-MARIANO','AGRI'),
+('2017-2575','AGRI'),
+('2017-3243','AGRI'),
+('2016-015','AGRI'),
+('2000-010','AGRI'),
+('2000-005','AGRI')
+
+
+Capuras, Shorelyn S.
+Ibañez, Zandro P.
+Lofranco, Cecile C.
+Nasibog Jr., Luciano D.
+Roxas, Cherry Ann P.
+Alcebar, Michelle A.
+Dela Cruz, Emily E.
+Demillo, Glenn M.
+Patagoc, Regie D.
+Patosa, Jerson B.
+Rellon, Eric E.
+Dana, Jeanevieve G.
+Florentino, Jinefer F.
+Diez, Lurevie G.
+
+
+
+('2016-0016','AB'),
+('2017-34534','AB'),     
+('74-3013-6','AB'),
+('AB9','AB'),
+('AB6','AB'),
+('AB5','AB'),
+('AB2','AB'),
+('AB4','AB'),
+('AB1','AB'),
+('AB-PATAGOC','AB'),
+('AB-RELLON','AB'),
+('AB-ALCEBAR','AB'),     
+('2000-007','AB'),
+('2016-0016','AB')     
+
+
+('01-2016'
+('74-0127-5','AF'),
+('2017-5488','AF'),
+
+
+WHERE LOWER(fullname) LIKE LOWER('%Arboleda%')
+	OR LOWER(fullname) LIKE LOWER('%Arcon%')
+    OR LOWER(fullname) LIKE LOWER('%Bello%')
+	OR LOWER(fullname) LIKE LOWER('%Cabrella%')
+    OR LOWER(fullname) LIKE LOWER('%Helen%')
+    OR LOWER(fullname) LIKE LOWER('%Omboy%')
+    OR LOWER(fullname) LIKE LOWER('%Rosil%')
+    OR LOWER(fullname) LIKE LOWER('%Almerez%')
+    OR LOWER(fullname) LIKE LOWER('%Balacy%')
+    OR LOWER(fullname) LIKE LOWER('%Bien%')
+    OR LOWER(fullname) LIKE LOWER('%Robante%')
+    OR LOWER(fullname) LIKE LOWER('%Lisley%')
+    OR LOWER(fullname) LIKE LOWER('%Nurab%')
+    OR LOWER(fullname) LIKE LOWER('%Sedon%')
+    OR LOWER(fullname) LIKE LOWER('%Fagutao%')
+
+
+UPDATE fes.faculty
+	SET deptcode='EDUC'
+	WHERE empid = '2017-654'
+   	OR empid = '74-0011-3'      
+    OR empid = '74-0010-2'      
+    OR empid = '2017-973'       
+    OR empid = '2017-343'       
+    OR empid = '74-3278-3'      
+    OR empid = '2016-77770'     
+    OR empid = '2016-2233'      
+    OR empid = '2016-0024'      
+    OR empid = '74-0079-9'      
+    OR empid = '74-0081-0'      
+    OR empid = '74-00993'       
+    OR empid = '2017-334'       
+    OR empid = '74-0092-4'      
+    OR empid = '2017-324'
+
+
+INSERT INTO fes.faculty(empid, deptcode)
+VALUES
+('AB6','AB'),
+('74-3013-6','AB'),
+('2017-34534','AB'),
+('AB-RELLON','AB'),
+('2016-0016','AB'),
+('AB5','AB'),
+('AB-PATAGOC','AB'),
+('AB1','AB'),
+('AB-ALCEBAR','AB'),
+('AB4','AB'),
+('AB9','AB'),
+('AB2','AB'),
+('2000-007','AB'),
+('2016-0016','AB'),
+('2000-006','AE'),
+('74-3203-2','AE'),
+('2016-2015','AE'),
+('2017-3223','AE'),
+('2016-7014','AE'),
+('2017-1299','AE'),
+('DAS-LANTICSE','AE'),
+('2016-7000','AE'),
+('2016-7002','AE'),
+('2016-7003','AE'),
+('2016-7013','AE'),
+('2016-7014','AE'),
+('2016-7009','AE'),
+('2016-7011','AE'),
+('2016-2016','AE'),
+('74-0127-5','AF'),
+('2017-5488','AF'),
+('01-2016','AF'),
+('2017-2575','AGRI'),
+('2000-002','AGRI'),
+('2000-003','AGRI'),
+('2000-004','AGRI'),
+('2017-5488','AGRI'),
+('2000-016','AGRI'),
+('AB11','AGRI'),
+('2000-009','AGRI'),
+('2000-007','AGRI'),
+('2000-001','AGRI'),
+('2000-010','AGRI'),
+('2000-016','AGRI'),
+('AGRI-MARIANO','AGRI'),
+('2017-3243','AGRI'),
+('2016-015','AGRI'),
+('2000-010','AGRI'),
+('2000-005','AGRI'),
+('74-0073-7','DAS'),
+('01-2016','DAS'),
+('EDUC-ONNAC','DAS'),
+('2017-4543','DAS'),
+('2017-9845','DAS'),
+('74-3288-4','DAS'),
+('74-0111-6','DAS'),
+('74-0036-0','DAS'),
+('74-0095-5','DAS'),
+('74-0047-4','DAS'),
+('74-3245-1','DAS'),
+('2017-5496','DAS'),
+('2017-5497','DAS'),
+('2017-2165','DAS'),
+('DAS-CAMPOSANO','DAS'),
+('2017-9478','DAS'),
+('DAS-ALMONIA','DAS'),
+('2017-324','EDUC'),
+('2016-77766','EDUC'),
+('74-0010-2','EDUC'),
+('2017-973','EDUC'),
+('2017-343','EDUC'),
+('74-3278-3','EDUC'),
+('2016-77770','EDUC'),
+('2016-2233','EDUC'),
+('2016-0024','EDUC'),
+('74-0079-9','EDUC'),
+('74-0081-0','EDUC'),
+('74-00993','EDUC'),
+('2017-334','EDUC'),
+('74-0092-4','EDUC'),
+('2017-334','EDUC'),
+('2017-654','EDUC'),
+('74-0011-3','EDUC'),
+('2017-00171','IT'),
+('74-3203-5','IT'),
+('74-3203-9','IT'),
+('74-00992','IT'),
+('74-3202-6','IT'),
+('74-3203-8','IT'),
+('74-34022-9','IT'),
+('2016-0001','IT'),
+('74-3203-3','IT'),
+('74-3202-8','IT'),
+('2016-0002','IT'),
+('74-3203-1','IT')
